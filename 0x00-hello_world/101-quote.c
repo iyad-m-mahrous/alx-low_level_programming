@@ -12,8 +12,8 @@
 int main(void)
 {
 	char *message = "and that piece of art is useful";
-	*message += "\" - Dora Korpar, 2015-10-19\n";
 
+	strcat(message, "\" - Dora Korpar, 2015-10-19\n");
 
 	write(2, message, strlen(message));
 
