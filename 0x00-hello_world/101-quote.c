@@ -11,7 +11,7 @@
  */
 int main(void)
 {
-	char *message = "and that piece of art is useful";
+	char message[100] = "and that piece of art is useful";
 
 	strcat(message, "\" - Dora Korpar, 2015-10-19\n");
 
