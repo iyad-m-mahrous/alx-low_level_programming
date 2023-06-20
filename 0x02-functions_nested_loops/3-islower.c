@@ -9,6 +9,6 @@
  */
 int _islower(int c)
 {
-	return ((c >= (int)'a' && c <= (int)'z') ? 1 : 0i);
+	return ((c >= (int)'a' && c <= (int)'z') ? 1 : 0));
 
 }
