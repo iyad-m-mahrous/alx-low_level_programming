@@ -9,13 +9,14 @@
  */
 int main(void)
 {
-	int i, first = 1, sec = 2, result;
+	int i;
+	long int first = 1, sec = 2, result;
 
 	printf("1, 2");
 	for (i = 3; i <= 50; i++)
 	{
 		result = first + sec;
-		printf(", %d", result);
+		printf(", %ld", result);
 		first = sec;
 		sec = result;
 	}
