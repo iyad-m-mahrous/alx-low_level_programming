@@ -25,7 +25,10 @@ int main(void)
 		shalf2 = sec2 % SPLITTER;
 		result1 = fhalf1 + fhalf2 + (shalf1 + shalf2) / SPLITTER;
 		result2 = (shalf1 + shalf2) % SPLITTER;
-		printf(", %lu%lu", result1, result2);
+		if (result1 == 0)
+			printf(", %lu", result2);
+		else
+			printf(", %lu%lu", result1, result2);
 		first1 = sec1;
 		first2 = sec2;
 		sec1 = result1;
