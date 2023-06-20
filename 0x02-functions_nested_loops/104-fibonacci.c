@@ -1,5 +1,5 @@
 #include <stdio.h>
-#define SPLITTER 10000000000000000000
+#define SPLITTER 10000000000000000000UL
 
 /**
  * main - Entry Function
