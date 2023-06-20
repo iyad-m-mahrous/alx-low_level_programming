@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdint.h>
 
 /**
  * main - Entry Function
@@ -10,7 +11,7 @@
 int main(void)
 {
 	int i;
-	unsigned long first = 1, sec = 2, result;
+	uint64_t first = 1, sec = 2, result;
 
 	printf("1, 2");
 	for (i = 3; i <= 98; i++)
