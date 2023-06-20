@@ -1,5 +1,4 @@
 #include <stdio.h>
-int fib(int);
 
 /**
  * main - Entry Function
@@ -10,26 +9,15 @@ int fib(int);
  */
 int main(void)
 {
-	int i;
+	int i, first = 1, sec = 2, result;
 
 	printf("1, 2");
 	for (i = 3; i <= 50; i++)
-		printf(", %d", fib(i));
+	{
+		result = first + sec;
+		printf(", %d", result));
+		first = sec;
+		sec = result;
+	}
 	printf("\n");
-	return (0);
-}
-
-
-/**
- * fib - Entry Function
- * @n: The base number
- *
- *
- * Return: fib number
- */
-int fib(int n)
-{
-	if (n == 1 || n == 2)
-		return (1);
-	return (fib(n - 1) + fib(n - 2));
 }
