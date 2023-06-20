@@ -17,7 +17,7 @@ int main(void)
 		result = first + sec;
 		if (result > 4000000)
 			break;
-		if(result % 2 == 0)
+		if (result % 2 == 0)
 			evensum += result;
 		first = sec;
 		sec = result;
