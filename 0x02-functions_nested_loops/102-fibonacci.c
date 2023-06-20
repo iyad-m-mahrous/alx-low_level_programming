@@ -15,7 +15,7 @@ int main(void)
 	for (i = 3; i <= 50; i++)
 	{
 		result = first + sec;
-		printf(", %d", result));
+		printf(", %d", result);
 		first = sec;
 		sec = result;
 	}
