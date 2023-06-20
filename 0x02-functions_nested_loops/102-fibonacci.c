@@ -20,4 +20,5 @@ int main(void)
 		sec = result;
 	}
 	printf("\n");
+	return (0);
 }
