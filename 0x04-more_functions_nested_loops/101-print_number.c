@@ -20,12 +20,6 @@ void print_number(int n)
 		n = n * -1;
 	}
 
-	if (n == 0)
-	{
-		_putchar('0');
-		return;
-	}
-
 	while ((n / new_base) == 0)
 	{
 		new_base = new_base / 10;
