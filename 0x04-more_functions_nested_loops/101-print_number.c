@@ -9,14 +9,25 @@
 
 void print_number(int n)
 {
-	int i, number, new_base;
+	int i, number = n, new_base = 10;
 
-	new_base = 1000000000;
 
 	if (n < 0)
 	{
 		_putchar('-');
 		n = n * -1;
+	}
+
+	if (n == 0)
+	{
+		_putchar('0');
+		return;
+	}
+
+	for (i = 0; (number / 10) > 0 ; i++)
+	{
+		new_base *= 10;
+		number = number / 10;
 	}
 
 	while ((n / new_base) == 0)
