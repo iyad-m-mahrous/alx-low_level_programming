@@ -3,7 +3,7 @@
 
 /**
  * print_number - prints an integer.
- * @n: the number 
+ * @n: the number
  *
  * Return: void
  */
@@ -11,6 +11,7 @@
 void print_number(int n)
 {
 	int i, number, new_base;
+
 	new_base = BASE;
 
 	if (n < 0)
@@ -22,10 +23,10 @@ void print_number(int n)
 	if (n == 0)
 	{
 		_putchar('0');
-		return ;
+		return;
 	}
-	
-	while((n / new_base) == 0)
+
+	while ((n / new_base) == 0)
 	{
 		new_base = new_base / 10;
 	}
