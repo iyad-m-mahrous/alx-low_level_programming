@@ -1,5 +1,4 @@
 #include "main.h"
-#define BASE 1000000000
 
 /**
  * print_number - prints an integer.
@@ -12,7 +11,7 @@ void print_number(int n)
 {
 	int i, number, new_base;
 
-	new_base = BASE;
+	new_base = 1000000000;
 
 	if (n < 0)
 	{
