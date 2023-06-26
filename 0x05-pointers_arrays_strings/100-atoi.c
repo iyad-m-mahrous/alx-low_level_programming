@@ -20,10 +20,6 @@ int _atoi(char *s)
 		{
 			sign = sign * -1;
 		}
-		else if (s[i] != ' ' && s[i] != '+' && num == 0)
-		{
-			sign = sign;
-		}	
 		else if (num != 0)
 		{
 			break;
