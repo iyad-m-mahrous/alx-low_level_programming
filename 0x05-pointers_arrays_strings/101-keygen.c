@@ -15,7 +15,7 @@ int main(void)
 
 	srand(time(0));
 
-	while (sum - ((rand() % 95) + 32) > 252)
+	while (sum -( i = ((rand() % 95) + 32)) > 252)
 	{
 		putchar(i);
 		sum -= i;
