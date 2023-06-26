@@ -26,7 +26,6 @@ int main(void)
 
 	putchar(sum / 2);
 	putchar(sum / 2 + sum % 2);
-	putchar('\0');
 
 	return (0);
 }
