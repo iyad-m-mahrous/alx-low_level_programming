@@ -15,7 +15,7 @@ int main(void)
 
 	srand(time(0));
 
-	while (sum -( i = ((rand() % 59) + 32)) > 180)
+	while (sum -( i = ((rand() % 57) + 32)) > 176)
 	{
 		putchar(i);
 		sum -= i;
