@@ -1,12 +1,5 @@
 #include <stdio.h>
 
-/**
- * main - Entry Function
- *
- * Description: Add one line to this code, so that the program prints a[2] = 98
- * Return: 0 if success
- */
-
 int main(void)
 {
 	int n;
