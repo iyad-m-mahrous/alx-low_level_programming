@@ -12,7 +12,7 @@ char *leet(char *s)
 	char lower[] = {'a', 'e', 'o', 't', 'l'};
 	char upper[] = {'A', 'E', 'O', 'T', 'L'};
 	int result[] = {'4', '3', '0', '7', '1'};
-	
+
 	while (*s != '\0')
 	{
 		for (i = 0; i < 5; i++)
@@ -23,7 +23,7 @@ char *leet(char *s)
 			}
 		}
 
-		s++;		
+		s++;
 	}
 
 	return (main_string);
