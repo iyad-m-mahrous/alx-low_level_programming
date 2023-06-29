@@ -3,16 +3,17 @@
 /**
  * print_number - prints an integer.
  * @n: input integer.
+ *
  * Return: no return.
  */
 void print_number(int n)
 {
-	int i = n, tens = 1;
+	unsigned int i = n, tens = 1;
 
 	if (n < 0)
 	{
 		_putchar('-');
-		n *= -1;
+		n = -n;
 	}
 
 	while (i = i / 10)
