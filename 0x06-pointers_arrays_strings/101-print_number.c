@@ -8,7 +8,7 @@
  */
 void print_number(int n)
 {
-	unsigned int i = n, tens = 1;
+	unsigned int i = n;
 
 	if (n < 0)
 	{
@@ -16,16 +16,7 @@ void print_number(int n)
 		n = -n;
 	}
 
-	while (i = i / 10)
-	{
-		tens = tens * 10;
-	}
-
-	while (tens >= 1)
-	{
-		_putchar('0' + (n / tens));
-		n = n % (tens);
-		tens = tens / 10;
-	}
-
+	if (i / 10 > 0)
+		print_number(i / 10);
+	_putchar('0' + (i % 10));
 }
