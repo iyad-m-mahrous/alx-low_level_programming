@@ -7,7 +7,7 @@
  */
 void print_number(int n)
 {
-	int i = n, tens;
+	int i = n, tens = 1;
 
 	if (n < 0)
 	{
