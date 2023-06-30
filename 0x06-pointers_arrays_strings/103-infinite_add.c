@@ -10,25 +10,14 @@
  */
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int size1 = 0, size2 = 0, r_size = 0;
-	char result[200];
-	char *num1 = n1;
-	char *num2 = n2;
-	int i, temp;
+	int size1 = 0, size2 = 0, r_size = 0, i;
+	char result[1000], *num1 = n1, *num2 = n2;
 
-	while (*num1 != '\0')
-	{
-		num1++;
+	for (i = 0; num1[i] != '\0'; i++)
 		size1++;
-	}
-	while (*num2 != '\0')
-	{
-		num2++;
+	for (i = 0; num2[i] != '\0'; i++)
 		size2++;
-	}
-	if (size1 >= size_r || size2 >= size_r)
-		return (0);
-	for (i = 0; i < 200; i++)
+	for (i = 0; i < 1000; i++)
 		result[i] = 100;
 	for (i = 0; i < size1; i++)
 		result[i] = (n1[size1 - 1 - i] - '0');
