@@ -8,7 +8,6 @@
  * @size_r: buffer size:
  * Return: the pointer to dest.
  */
-
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
 	int size1 = 0, size2 = 0, r_size = 0;
@@ -22,36 +21,25 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		num1++;
 		size1++;
 	}
-
 	while (*num2 != '\0')
 	{
 		num2++;
 		size2++;
 	}
-
 	if (size1 >= size_r || size2 >= size_r)
-	{
 		return (0);
-	}
 	for (i = 0; i < 200; i++)
-	{
 		result[i] = 100;
-	}
 	for (i = 0; i < size1; i++)
-	{
 		result[i] = (n1[size1 - 1 - i] - '0');
-	}
 	for (i = 0; i < size2; i++)
-	{
 		result[i] += (n2[size2 - 1 - i] - '0');
-	}
 	for (i = 0; result[i] < 100; i++)
 	{
 		result[i + 1] += result[i] / 10;
 		result[i] %= 10;
 	}
 	i = 0;
-
 	while (result[i] < 100)
 	{
 		r_size++;
@@ -60,9 +48,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	if (result[r_size] > 100)
 		r_size++;
 	if (r_size >= size_r)
-	{
 		return (0);
-	}
 	for (i = 0; i < r_size; i++)
 	{
 		if (result[r_size - i - 1] > 100)
@@ -71,5 +57,4 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	}
 	r[r_size] = '\0';
 	return (r);
-
 }
