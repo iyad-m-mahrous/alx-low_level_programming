@@ -17,7 +17,7 @@ void print_buffer(char *b, int size)
 		for (j = 0; j < 12; j++)
 		{
 			if (j == 0)
-				printf("%08x:", b1 - b);
+				printf("%08lx:", (unsigned long)(b1 - b));
 			else if (j == 11)
 			{
 				for (k = 0; k < 10; k++)
@@ -36,7 +36,7 @@ void print_buffer(char *b, int size)
 			{
 				if (b3 - b < size)
 				{
-					printf("%02x", *b3);
+					printf("%02lx", (unsigned long)*b3);
 					b3++;
 				}
 				else
