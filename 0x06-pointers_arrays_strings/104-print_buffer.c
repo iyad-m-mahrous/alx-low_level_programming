@@ -9,14 +9,11 @@
  */
 void print_buffer(char *b, int size)
 {
-	int i, j, k;
+	int i, j, k, l = 0;
 	char *b1 = b, *b2 = b, *b3 = b;
 
-	if (size == 0) 
-	{
-		printf("\n");
-		return;
-	}
+	(size <= 0) ? printf("\n") : l++;
+	(size <= 0) ? return : l++;
 	for (i = 0; i < ((size / 10) + (size % 10 ? 1 : 0)); i++)
 	{
 		for (j = 0; j < 12; j++)
@@ -40,15 +37,12 @@ void print_buffer(char *b, int size)
 			else
 			{
 				if (b3 - b < size)
-				{
 					printf("%02lx", (unsigned long)*b3);
-					b3++;
-				}
 				else
 					printf("  ");
+				b3++;
 			}
-			if ((j + 1) % 2)
-				printf(" ");
+			((j + 1) % 2) ? printf(" ") : l++;
 			b1++;
 		}
 		b1 -= 2;
