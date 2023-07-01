@@ -13,7 +13,8 @@ void print_buffer(char *b, int size)
 	char *b1 = b, *b2 = b, *b3 = b;
 
 	(size <= 0) ? printf("\n") : l++;
-	(size <= 0) ? return : l++;
+	if (size <= 0)
+		return;
 	for (i = 0; i < ((size / 10) + (size % 10 ? 1 : 0)); i++)
 	{
 		for (j = 0; j < 12; j++)
