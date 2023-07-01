@@ -22,7 +22,7 @@ void print_buffer(char *b, int size)
 			{
 				for (k = 0; k < 10; k++)
 				{
-					if (b2 - b <= size)
+					if (b2 - b < size)
 					{
 					if (*b2 != '\\' && *b2 != '\n' && *b2 > 9)
 						printf("%c", *b2);
