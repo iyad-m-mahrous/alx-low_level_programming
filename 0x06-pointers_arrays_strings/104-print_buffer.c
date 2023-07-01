@@ -12,6 +12,11 @@ void print_buffer(char *b, int size)
 	int i, j, k;
 	char *b1 = b, *b2 = b, *b3 = b;
 
+	if (size == 0) 
+	{
+		printf("\n");
+		return;
+	}
 	for (i = 0; i < ((size / 10) + (size % 10 ? 1 : 0)); i++)
 	{
 		for (j = 0; j < 12; j++)
