@@ -12,7 +12,6 @@
 char *_strstr(char *haystack, char *needle)
 {
 	char *main_needle = needle, *similar;
-	int equal = 0;
 
 	while (*needle != '\0')
 	{
