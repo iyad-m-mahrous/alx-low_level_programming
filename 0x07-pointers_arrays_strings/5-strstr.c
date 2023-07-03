@@ -41,7 +41,7 @@ char *_strstr(char *haystack, char *needle)
 
 		needle = main_needle;
 	}
-	if (*needle == *haystack)
-		return (needle);
+	if (*needle == '\0')
+		return (haystack);
 	return (0);
 }
