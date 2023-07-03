@@ -21,7 +21,7 @@ char *_strstr(char *haystack, char *needle)
 			haystack++;
 		}
 		if (*haystack == '\0')
-			return (NULL);
+			return (0);
 
 		similar = haystack;
 
@@ -37,11 +37,11 @@ char *_strstr(char *haystack, char *needle)
 		}
 		else if (*haystack == '\0')
 		{
-			return (NULL);
+			return (0);
 		}
 
 
 		needle = main_needle;
 	}
-	return (NULL);
+	return (0);
 }
