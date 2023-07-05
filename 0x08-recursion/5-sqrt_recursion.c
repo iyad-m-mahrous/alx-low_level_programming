@@ -15,7 +15,7 @@ int sqrt_test(int n, int b)
 	if (n == b * b)
 		return (b);
 	if (n > b * b)
-		sqrt_test(n, b + 1);
+		return (sqrt_test(n, b + 1));
 }
 
 /**
