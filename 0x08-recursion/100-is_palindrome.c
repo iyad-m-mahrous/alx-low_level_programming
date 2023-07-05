@@ -30,7 +30,7 @@ int check(char *start, char *end)
 		return (1);
 	if (*start != *end)
 		return (0);
-	check(start + 1, end - 1);
+	return (check(start + 1, end - 1));
 }
 
 /**
