@@ -16,7 +16,7 @@ int check_prime(int n, int b)
 		return (0);
 	if (b == 1)
 		return (1);
-	check_prime(n, b - 1);
+	return (check_prime(n, b - 1));
 }
 
 /**
