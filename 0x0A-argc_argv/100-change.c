@@ -19,30 +19,32 @@ int main(int argc, char *argv[])
 	int coins[] = {25, 10, 5, 2, 1};
 
 	if (argc != 2)
-		{
-			printf("Error\n");
-			return (1);
-		}
+	{
+		printf("Error\n");
+		return (1);
+	}
 	for (i = 0; argv[1][i] != '\0'; i++)
 	{
 		if (argv[1][i] < '0' || argv[1][i] > '9')
 		{
 			if (i == 0 && argv[1][0] == '-')
+			{
 				continue;
+			}
 			else
 			{
 				printf("Error\n");
-				return (1);	
+				return (1);
 			}
 		}
 	}
 	total = atoi(argv[1]);
 	if (total < 0)
-		{
-			printf("0\n");
-			return (0);
-		}
-	for (i = 0; i < 5 ;i++)
+	{
+		printf("0\n");
+		return (0);
+	}
+	for (i = 0; i < 5; i++)
 	{
 		while ((n_coins += total / coins[i]) != 0)
 		{
@@ -51,5 +53,5 @@ int main(int argc, char *argv[])
 		}
 	}
 	printf("%d\n", n_coins);
-	return 0;
+	return (0);
 }
