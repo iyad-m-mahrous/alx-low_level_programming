@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
 			{
 				continue;
 			}
-			else if ( argv[i][0] != '-')
+			else
 			{
 				printf("Error\n");
 				return (1);
