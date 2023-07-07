@@ -23,6 +23,19 @@ int main(int argc, char *argv[])
 			printf("Error\n");
 			return (1);
 		}
+	for (i = 0; argv[1][i] != '\0'; i++)
+	{
+		if (argv[1][i] <= '0' || argv[1][i] >= '9')
+		{
+			if (i == 0 && argv[1][i] == '-')
+				continue;
+			else
+			{
+				printf("Error\n");
+				return (1);	
+			}
+		}
+	}
 	total = atoi(argv[1]);
 	if (total < 0)
 		{
