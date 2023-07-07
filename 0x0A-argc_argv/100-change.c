@@ -25,9 +25,9 @@ int main(int argc, char *argv[])
 		}
 	for (i = 0; argv[1][i] != '\0'; i++)
 	{
-		if (argv[1][i] <= '0' || argv[1][i] >= '9')
+		if (argv[1][i] < '0' || argv[1][i] > '9')
 		{
-			if (i == 0 && argv[1][i] == '-')
+			if (i == 0 && argv[1][0] == '-')
 				continue;
 			else
 			{
