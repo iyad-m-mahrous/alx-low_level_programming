@@ -28,6 +28,8 @@ char *argstostr(int ac, char **av)
 	}
 
 	new = (char *) malloc(sizeof(char) * (size + ac + 1));
+	if (!new)
+		return (0);
 
 	for (i = 0 ; i < ac; i++)
 	{
