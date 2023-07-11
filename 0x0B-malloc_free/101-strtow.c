@@ -94,7 +94,7 @@ char **strtow(char *str)
 	wc = wcount(str);
 	if (wc == 0)
 		return (0);
-	out = (char **) malloc((sizeof(char *) * (wc + 1)));
+	out = (char **) malloc((sizeof(char *) * (wc + 2)));
 	if (!out)
 		return (0);
 	for (i = 0; i < wc; i++)
