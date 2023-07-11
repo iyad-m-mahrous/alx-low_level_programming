@@ -110,7 +110,7 @@ char **strtow(char *str)
 
 		for (j = 0; j < size; j++)
 		{
-			out[i][j] = str[size + j];
+			out[i][j] = str[ii + j];
 		}
 		out[i][size] = 0;
 	}
