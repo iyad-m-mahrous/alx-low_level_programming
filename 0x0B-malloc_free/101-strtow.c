@@ -64,7 +64,7 @@ char **strtow(char *str)
 	int i = 0, j = 0, wc;
 	char **out;
 
-	if (str == 0 || str == "")
+	if (str == 0 || *str == 0)
 		return (0);
 
 	wc = wcount(str);
