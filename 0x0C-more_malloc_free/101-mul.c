@@ -69,7 +69,7 @@ int main(int argc, char *argv[])
 		}
 	}
 	i = 0;
-	while (result[i] == '0')
+	while (result[i] == '0' && result[i + 1] != 0)
 		i++;
 	if (i > 0)
 		for (j = i; j <= (size1 + size2); j++)
