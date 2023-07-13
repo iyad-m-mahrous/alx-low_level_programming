@@ -75,5 +75,6 @@ int main(int argc, char *argv[])
 		for (j = i; j <= (size1 + size2); j++)
 			result[j - i] = result[j];
 	printf("%s\n", result);
+	free(result);
 	return (0);
 }
