@@ -1,7 +1,8 @@
 #ifndef MAIN_HEADER
 #define MAIN_HEADER
 
-#include <stddeff.h>
+#include <stddef.h>
+#include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
 
