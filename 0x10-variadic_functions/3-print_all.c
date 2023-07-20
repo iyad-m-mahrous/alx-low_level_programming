@@ -4,7 +4,7 @@
 
 /**
  * print_char - prints variadic argument char
- * @list: variadic list
+ * @args: variadic list
  *
  * Return: Nothing
  */
@@ -16,7 +16,7 @@ void print_char(va_list args)
 
 /**
  * print_int - prints variadic argument int
- * @list: variadic list
+ * @args: variadic list
  *
  * Return: Nothing
  */
@@ -28,7 +28,7 @@ void print_int(va_list args)
 
 /**
  * print_float - prints variadic argument float
- * @list: variadic list
+ * @args: variadic list
  *
  * Return: Nothing
  */
@@ -40,7 +40,7 @@ void print_float(va_list args)
 
 /**
  * print_str - prints variadic argument string
- * @list: variadic list
+ * @args: variadic list
  *
  * Return: Nothing
  */
