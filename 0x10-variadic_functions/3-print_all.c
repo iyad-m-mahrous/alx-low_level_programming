@@ -9,9 +9,9 @@
  * Return: Nothing
  */
 
-void print_char(va_list list)
+void print_char(va_list args)
 {
-	printf("%c", va_arg(list, int));
+	printf("%c", va_arg(args, int));
 }
 
 /**
@@ -21,9 +21,9 @@ void print_char(va_list list)
  * Return: Nothing
  */
 
-void print_int(va_list list)
+void print_int(va_list args)
 {
-	printf("%i", va_arg(list, int));
+	printf("%i", va_arg(args, int));
 }
 
 /**
@@ -33,9 +33,9 @@ void print_int(va_list list)
  * Return: Nothing
  */
 
-void print_float(va_list list)
+void print_float(va_list args)
 {
-	printf("%f", va_arg(list, double));
+	printf("%f", va_arg(args, double));
 }
 
 /**
@@ -45,11 +45,11 @@ void print_float(va_list list)
  * Return: Nothing
  */
 
-void print_str(va_list list)
+void print_str(va_list args)
 {
 	char *str;
 
-	str = va_arg(list, char *);
+	str = va_arg(args, char *);
 	if (!str)
 		str = "(nil)";
 	printf("%s", str);
