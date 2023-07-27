@@ -1,5 +1,5 @@
 section .data
-    hello_message db "Hello, Holberton", 0
+    hello_message db "Hello, Holberton", 0xA, 0
     format db "%s", 0
 
 section .text
