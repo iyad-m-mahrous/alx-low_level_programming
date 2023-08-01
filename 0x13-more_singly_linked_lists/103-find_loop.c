@@ -21,7 +21,7 @@ listint_t *find_listint_loop(listint_t *head)
 	{
 		if (next == next->next)
 			return (next);
-		while (node)
+		while (node != next)
 		{
 			if (node == next->next)
 				return (node);
