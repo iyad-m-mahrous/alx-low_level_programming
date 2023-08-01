@@ -55,6 +55,8 @@ size_t free_listint_safe(listint_t **h)
 			passed_loop = 1;
 		to_del = temp;
 		temp = to_del->next;
+		if (temp == to_del)
+			temp = NULL;
 		free(to_del);
 		size++;
 
