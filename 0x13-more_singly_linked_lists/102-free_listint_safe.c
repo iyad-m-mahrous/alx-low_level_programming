@@ -12,7 +12,7 @@ size_t free_listint_safe(listint_t **h)
 	listint_t *temp = *h, *to_del;
 	size_t size = 0;
 
-	if (!*h)
+	if (!*h || !h)
 		return (size);
 	while (temp)
 	{
