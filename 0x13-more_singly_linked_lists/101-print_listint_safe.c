@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "lists.h"
+#include <stdlib.h>
 
 /**
  * print_listint_safe - prints a singly linked list (can print lists with loop)
@@ -9,23 +10,28 @@
  */
 size_t print_listint_safe(const listint_t *head)
 {
-	const listint_t *temp = head;
-	unsigned int size = 0;
+	const listint_t *tmp, *tmp2;
+	unsigned int count = 0;
 
-	if (!head)
-		return (size);
-	while (temp)
+	tmp = head;
+	if (tmp == 0)
+		return (0);
+
+	while (tmp != 0)
 	{
-		printf("[%p] %d\n", (void *)temp, temp->n);
-		size++;
-		if (temp->next >= temp)
+		tmp2 = tmp;
+		tmp = tmp->next;
+
+		count++;
+
+		printf("[%p] %d\n", (void *)tmp2, tmp2->n);
+
+		if (tmp2 <= tmp)
 		{
-			temp = temp->next;
-			printf("-> [%p] %d\n", (void *)temp, temp->n);
+			printf("-> [%p] %d\n", (void *)tmp, tmp->n);
 			break;
 		}
-		temp = temp->next;
 	}
-	return (size);
 
+	return (count);
 }
