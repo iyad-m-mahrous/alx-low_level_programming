@@ -9,7 +9,7 @@
  */
 size_t free_listint_safe(listint_t **h)
 {
-	const listint_t *temp = *h, *to_del;
+	listint_t *temp = *h, *to_del;
 	size_t size = 0;
 
 	if (!*h)
