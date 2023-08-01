@@ -44,21 +44,25 @@ size_t free_listint_safe(listint_t **h)
 {
 	listint_t *temp = *h, *to_del, *looped;
 	size_t size = 0;
+	int passed_loop = 0;
 
 	if (!*h || !h)
 		return (size);
 	looped = find_listint_loop(*h);
 	while (temp)
 	{
+		if (temp == looped)
+			passed_loop = 1;
 		to_del = temp;
 		temp = to_del->next;
 		free(to_del);
 		size++;
+
 		if (!temp)
 		{
 			break;
 		}
-		if (temp->next == looped)
+		if (temp->next == looped && passed_loop)
 		{
 			free(temp);
 			size++;
