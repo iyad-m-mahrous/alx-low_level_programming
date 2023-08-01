@@ -20,6 +20,10 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 	{
 		prev = node;
 		node = node->next;
+		if (!node)
+		{
+			return (-1);
+		}
 	}
 	if (prev)
 	{
