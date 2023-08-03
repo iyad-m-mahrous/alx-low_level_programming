@@ -1,4 +1,5 @@
 #include <main.h>
+
 /**
  * binary_to_uint - converts a bit string to unsigned int
  *
