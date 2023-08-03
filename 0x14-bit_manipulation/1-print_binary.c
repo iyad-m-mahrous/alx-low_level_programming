@@ -26,5 +26,4 @@ void print_binary(unsigned long int n)
 		mask = mask >> 1;
 	}
 	_putchar(digit);
-	_putchar('\n');
 }
