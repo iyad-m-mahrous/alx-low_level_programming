@@ -35,7 +35,7 @@ int close_check(int fd)
 int rw_error(int rfd, int wfd, char *filename, char rw)
 {
 	if (rw == 'r')
-		dprintf(STDERR_FILENO, "Error: Can't read from %s\n", filename);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", filename);
 	else if (rw == 'w')
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", filename);
 	close_check(rfd);
