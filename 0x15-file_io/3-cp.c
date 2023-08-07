@@ -41,8 +41,8 @@ int rw_error(int rfd, int wfd, char *filename, char rw)
 	close_check(rfd);
 	close_check(wfd);
 	if (rw == 'r')
-		return (98);
-	return (99);
+		exit(98);
+	exit(99);
 }
 
 
