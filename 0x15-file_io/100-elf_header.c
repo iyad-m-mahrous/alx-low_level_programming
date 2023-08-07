@@ -194,13 +194,22 @@ int main(int argc, char *argv[])
 	char magic[32];
 
 	if (argc != 2)
+	{
+		dprintf(STDERR_FILENO, "Use correctly\n");
 		return (98);
+	}
 	fd = open(argv[1], O_RDONLY);
 	if (fd == -1)
+	{
+		dprintf(STDERR_FILENO, "Failed to open ELF file\n");
 		return (98);
+	}
 	i = read(fd, magic, 32);
 	if (i == -1 || i < 28)
+	{
+		dprintf(STDERR_FILENO, "Failed to read ELF file\n");
 		return (98);
+	}
 	if (magic[0] != 0x7f || magic[1] != 'E' || magic[2] != 'L' || magic[3] != 'F')
 	{
 		dprintf(STDERR_FILENO, "Failed to read ELF file\n");
