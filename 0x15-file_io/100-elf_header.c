@@ -205,7 +205,7 @@ int main(int argc, char *argv[])
 		return (98);
 	}
 	i = read(fd, magic, 32);
-	if (i == -1 || i < 28)
+	if (i == -1 || i < 32)
 	{
 		dprintf(STDERR_FILENO, "Failed to read ELF file\n");
 		return (98);
