@@ -191,7 +191,7 @@ void print_entry_point(char *magic)
 int main(int argc, char *argv[])
 {
 	int fd, i;
-	char magic[32];
+	char magic[16];
 
 	if (argc != 2)
 	{
@@ -204,8 +204,8 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't read file %s\n", argv[1]);
 		return (98);
 	}
-	i = read(fd, magic, 32);
-	if (i == -1 || i < 28)
+	i = read(fd, magic, 16);
+	if (i == -1 || i < 16)
 	{
 		dprintf(STDERR_FILENO, "Failed to read ELF file\n");
 		return (98);
@@ -218,8 +218,7 @@ int main(int argc, char *argv[])
 	printf("ELF Header:\n  Magic:   ");
 	for (i = 0; i < 15; i++)
 		printf("%02x ", (unsigned int) magic[i]);
-	printf("%02x", (unsigned int) magic[15]);
-	printf("\n");
+	printf("%02x\n", (unsigned int) magic[15]);
 	print_class_field(magic);
 	print_data_field(magic);
 	print_version_field(magic);
