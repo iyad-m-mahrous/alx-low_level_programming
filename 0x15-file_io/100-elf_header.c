@@ -164,7 +164,6 @@ void print_entry_point(char *magic)
 		printf("%x", magic[i--]);
 		while (i >= 0x18)
 			printf("%02x", (unsigned char) magic[i--]);
-		printf("\n");
 	}
 	else
 	{
@@ -174,7 +173,6 @@ void print_entry_point(char *magic)
 		printf("%x", magic[i++]);
 		while (i <= end)
 			printf("%02x", (unsigned char) magic[i++]);
-		printf("\n");
 	}
 }
 
