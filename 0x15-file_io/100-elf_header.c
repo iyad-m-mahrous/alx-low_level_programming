@@ -147,34 +147,35 @@ void print_type_field(char *magic)
  *
  * Return: void
  */
-
 void print_entry_point(char *magic)
 {
-    int i, last;
-    int isLittleEndian = magic[5] == 1;
+	int i, end;
 
-    printf("  %-35s0x", "Entry point address:");
-
-    if (magic[4] == 2)
-        last = 0x1f;
-    else
-        last = 0x1b;
-
-    if (isLittleEndian)
-        i = last;
-    else
-        i = 0x18;
-
-    while ((isLittleEndian && i >= 0x18) || (!isLittleEndian && i <= last))
-    {
-        printf("%02x", (unsigned char) magic[i]);
-        if (isLittleEndian)
-            i--;
-        else
-            i++;
-    }
-
-    printf("\n");
+	printf("  %-35s0x", "Entry point address:");
+	if (magic[4] == 2)
+		end = 0x1f;
+	else
+		end = 0x1b;
+	if (magic[5] == 1)
+	{
+		i = end;
+		while (magic[i] == 0 && i > 0x18)
+			i--;
+		printf("%x", magic[i--]);
+		while (i >= 0x18)
+			printf("%02x", (unsigned char) magic[i--]);
+		printf("\n");
+	}
+	else
+	{
+		i = 0x18;
+		while (magic[i] == 0)
+			i++;
+		printf("%x", magic[i++]);
+		while (i <= end)
+			printf("%02x", (unsigned char) magic[i++]);
+		printf("\n");
+	}
 }
 
 
