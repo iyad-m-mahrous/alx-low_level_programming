@@ -201,7 +201,7 @@ int main(int argc, char *argv[])
 	fd = open(argv[1], O_RDONLY);
 	if (fd == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read file %s\n", argv[1]\n");
+		dprintf(STDERR_FILENO, "Error: Can't read file %s\n", argv[1]);
 		return (98);
 	}
 	i = read(fd, magic, 32);
