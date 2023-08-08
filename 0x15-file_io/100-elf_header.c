@@ -216,8 +216,9 @@ int main(int argc, char *argv[])
 		return (98);
 	}
 	printf("ELF Header:\n  Magic:   ");
-	for (i = 0; i < 16; i++)
+	for (i = 0; i < 15; i++)
 		printf("%02x ", (unsigned int) magic[i]);
+	printf("%02x", (unsigned int) magic[15]);
 	printf("\n");
 	print_class_field(magic);
 	print_data_field(magic);
