@@ -9,7 +9,7 @@
  *
  * Return: void
  */
-void print_class_field(char *magic)
+void print_class_field(unsigned char *magic)
 {
 	printf("  %-35s", "Class:");
 	if (magic[4] == 2)
@@ -28,7 +28,7 @@ void print_class_field(char *magic)
  *
  * Return: void
  */
-void print_data_field(char *magic)
+void print_data_field(unsigned char *magic)
 {
 	printf("  %-35s", "Data:");
 	if (magic[5] == 1)
@@ -46,7 +46,7 @@ void print_data_field(char *magic)
  *
  * Return: void
  */
-void print_version_field(char *magic)
+void print_version_field(unsigned char *magic)
 {
 	printf("  %-35s", "Version:");
 	if (magic[6] <= EV_CURRENT)
@@ -70,7 +70,7 @@ void print_version_field(char *magic)
  *
  * Return: void
  */
-void print_abi_version(char *magic)
+void print_abi_version(unsigned char *magic)
 {
 	printf("  %-35s", "OS/ABI:");
 	if (magic[7] == 0)
@@ -119,7 +119,7 @@ void print_abi_version(char *magic)
  *
  * Return: void
  */
-void print_type_field(char *magic)
+void print_type_field(unsigned char *magic)
 {
 	int index;
 
@@ -147,7 +147,7 @@ void print_type_field(char *magic)
  *
  * Return: void
  */
-void print_entry_point(char *magic)
+void print_entry_point(unsigned char *magic)
 {
 	int i, last;
 	int isLittleEndian = (magic[5] == 1);
@@ -207,13 +207,13 @@ int main(int argc, char *argv[])
 		return (98);
 	}
 	i = read(fd, &elf_header, sizeof(elf_header));
-	if (i == -1 || i < sizeof(elf_header))
+	if (i == -1 || i < (int)sizeof(elf_header))
 	{
 		dprintf(STDERR_FILENO, "Failed to read ELF file\n");
 		return (98);
 	}
-	if (elf_header.e_ident[0] != 0x7f || elf_header.e_ident[1] != 'E' ||
-		elf_header.e_ident[2] != 'L' || elf_header.e_ident[3] != 'F'))
+	if (elf_header.e_ident[0] != 0x7f || elf_header.e_ident[1] != 'E'
+			|| elf_header.e_ident[2] != 'L' || elf_header.e_ident[3] != 'F')
 	{
 		dprintf(STDERR_FILENO, "Failed to read ELF file\n");
 		return (98);
