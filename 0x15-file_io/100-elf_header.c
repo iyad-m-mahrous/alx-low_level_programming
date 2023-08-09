@@ -193,7 +193,7 @@ void print_entry_point(char *magic)
 int main(int argc, char *argv[])
 {
 	int fd, i;
-	char magic[32];
+	Elf64_Ehdr elf_header;
 
 	if (argc != 2)
 	{
@@ -206,26 +206,27 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't read file %s\n", argv[1]);
 		return (98);
 	}
-	i = read(fd, magic, 32);
-	if (i == -1 || i < 32)
+	i = read(fd, &elf_header, sizeof(elf_header));
+	if (i == -1 || i < sizeof(elf_header))
 	{
 		dprintf(STDERR_FILENO, "Failed to read ELF file\n");
 		return (98);
 	}
-	if (magic[0] != 0x7f || magic[1] != 'E' || magic[2] != 'L' || magic[3] != 'F')
+	if (elf_header.e_ident[0] != 0x7f || elf_header.e_ident[1] != 'E' ||
+		elf_header.e_ident[2] != 'L' || elf_header.e_ident[3] != 'F'))
 	{
 		dprintf(STDERR_FILENO, "Failed to read ELF file\n");
 		return (98);
 	}
 	printf("ELF Header:\n  Magic:   ");
 	for (i = 0; i < 15; i++)
-		printf("%02x ", (unsigned int) magic[i]);
-	printf("%02x\n", (unsigned int) magic[15]);
-	print_class_field(magic);
-	print_data_field(magic);
-	print_version_field(magic);
-	print_abi_version(magic);
-	print_type_field(magic);
-	print_entry_point(magic);
+		printf("%02x ", elf_header.e_ident[i]);
+	printf("%02x\n", elf_header.e_ident[15]);
+	print_class_field(elf_header.e_ident);
+	print_data_field(elf_header.e_ident);
+	print_version_field(elf_header.e_ident);
+	print_abi_version(elf_header.e_ident);
+	print_type_field(elf_header.e_ident);
+	print_entry_point(elf_header.e_ident);
 	return (0);
 }
