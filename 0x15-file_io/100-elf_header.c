@@ -73,42 +73,23 @@ void print_version_field(unsigned char *magic)
 void print_abi_version(unsigned char *magic)
 {
 	printf("  %-35s", "OS/ABI:");
-	if (magic[7] == 0)
-		printf("UNIX - System V\n");
-	else if (magic[7] == 1)
-		printf("UNIX - HP-UX\n");
-	else if (magic[7] == 2)
-		printf("UNIX - NetBSD\n");
-	else if (magic[7] == 3)
-		printf("UNIX - Linux\n");
-	else if (magic[7] == 4)
-		printf("UNIX - GNU Hurd\n");
-	else if (magic[7] == 6)
-		printf("UNIX - Solaris\n");
-	else if (magic[7] == 7)
-		printf("UNIX - AIX\n");
-	else if (magic[7] == 8)
-		printf("UNIX - IRIX\n");
-	else if (magic[7] == 9)
-		printf("UNIX - FreeBSD\n");
-	else if (magic[7] == 10)
-		printf("UNIX - Tru64\n");
-	else if (magic[7] == 11)
-		printf("UNIX - Novell Modesto\n");
-	else if (magic[7] == 12)
-		printf("UNIX - OpenBSD\n");
-	else if (magic[7] == 13)
-		printf("UNIX - Open VMS\n");
-	else if (magic[7] == 14)
-		printf("UNIX - NonStop Kernel\n");
-	else if (magic[7] == 15)
-		printf("UNIX - AROS\n");
-	else if (magic[7] == 16)
-		printf("UNIX - Fenix OS\n");
-	else if (magic[7] == 17)
-		printf("UNIX - CloudABI\n");
-	else
-		printf("<unknown: %02x>\n", magic[7]);
+	printf(magic[7] == 0 ? "UNIX - System V\n" :
+			magic[7] == 1 ? "UNIX - HP-UX\n" :
+			magic[7] == 2 ? "UNIX - NetBSD\n" :
+			magic[7] == 3 ? "UNIX - Linux\n" :
+			magic[7] == 4 ? "UNIX - GNU Hurd\n" :
+			magic[7] == 6 ? "UNIX - Solaris\n" :
+			magic[7] == 7 ? "UNIX - AIX\n" :
+			magic[7] == 8 ? "UNIX - IRIX\n" :
+			magic[7] == 9 ? "UNIX - FreeBSD\n" :
+			magic[7] == 10 ? "UNIX - Tru64\n" :
+			magic[7] == 11 ? "UNIX - Novell Modesto\n" :
+			magic[7] == 12 ? "UNIX - OpenBSD\n" :
+			magic[7] == 13 ? "UNIX - Open VMS\n" :
+			magic[7] == 14 ? "UNIX - NonStop Kernel\n" :
+			magic[7] == 15 ? "UNIX - AROS\n" :
+			magic[7] == 16 ? "UNIX - Fenix OS\n" :
+			magic[7] == 17 ? "UNIX - CloudABI\n" : "<unknown: %02x>\n", magic[7]);
 	printf("  %-35s%d\n", "ABI Version:", magic[8]);
 }
 
