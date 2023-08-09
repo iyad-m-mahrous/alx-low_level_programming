@@ -11,13 +11,13 @@
  */
 void print_class_field(unsigned char *magic)
 {
-	printf("  %-35s", "Data:");
-	if (magic[5] == 1)
-		printf("2's complement, little endian\n");
-	else if (magic[5] == 2)
-		printf("2's complement, big endian\n");
+	printf("  %-35s", "Class:");
+	if (magic[4] == 2)
+		printf("ELF64\n");
+	else if (magic[4] == 1)
+		printf("ELF32\n");
 	else
-		printf("<unknown: %02hx>", magic[5]);
+		printf("<unknown: %02hx>", magic[4]);
 }
 
 /**
