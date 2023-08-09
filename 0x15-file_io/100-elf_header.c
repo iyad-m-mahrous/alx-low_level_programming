@@ -12,12 +12,8 @@
 void print_class_field(unsigned char *magic)
 {
 	printf("  %-35s", "Class:");
-	if (magic[4] == 2)
-		printf("ELF64\n");
-	else if (magic[4] == 1)
-		printf("ELF32\n");
-	else
-		printf("<unknown: %02hx>", magic[4]);
+	printf("%s\n", magic[4] == 2 ? "ELF64" : magic[4] == 1 ? "ELF32" :
+			"<unknown: %02hx>", magic[4]);
 }
 
 /**
