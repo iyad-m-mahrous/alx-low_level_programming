@@ -15,15 +15,18 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash_node_t *new_node;
 	char *key_dup, *value_dup;
 
-	if (!(ht) || !key || key == "")
+	if (!(ht) || !key || !key[0] || ht->size == 0 || !ht->array)
 		return (0);
 	key_dup = strdup(key);
 	if (!key_dup)
 		return (0);
 	value_dup = strdup(value);
 	if (!value_dup)
+	{
+		free(key_dup);
 		return (0);
-	new_node = (*hash_node_t) calloc(1, sizeof(*new_node));
+	}
+	new_node = (hash_node_t *) calloc(1, sizeof(*new_node));
 	if (!new_node)
 		return (free(key_dup), free(value_dup), 0);
 	new_node->key = key_dup;
@@ -40,9 +43,9 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	else
 	{
 		free(ht->array[index]->value);
-		ht->array[index]->value = vlaue_dup;
+		ht->array[index]->value = value_dup;
 		free(key_dup);
 		free(new_node);
 	}
-	return (1)
+	return (1);
 }
